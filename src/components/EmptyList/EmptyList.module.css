@@ -1,0 +1,14 @@
+.Bober {
+  /* box-shadow: 4px 4px 35px 0 #c00000; */
+  width: 345px;
+  height: 283px;
+}
+
+.Empty {
+  font-weight: 600;
+  font-size: 35px;
+  text-align: center;
+  color: #f4e7e7;
+  margin-bottom: 34px;
+  margin-top: 60px;
+}

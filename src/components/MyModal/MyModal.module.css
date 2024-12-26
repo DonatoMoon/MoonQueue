@@ -1,0 +1,60 @@
+/* src/components/MyModal/MyModal.module.css */
+.myModal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  backdrop-filter: blur(2.5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.myModal.active {
+  display: flex;
+}
+
+.myModalContent {
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 680px;
+}
+.myModalContent h1{
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 36px;
+}
+.myModalContent h2 {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.myModalContent form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 150px;
+  padding: 30px 0 20px ;
+}
+
+.myModalContent input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 55px;
+}
+
+.myModalContent .toggle-button {
+  background-color: transparent;
+  color: #f44336;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}

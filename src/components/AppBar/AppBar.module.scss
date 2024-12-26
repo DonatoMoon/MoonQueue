@@ -1,0 +1,15 @@
+.bar{
+  height: 140px;
+  &__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  &__col{
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+}

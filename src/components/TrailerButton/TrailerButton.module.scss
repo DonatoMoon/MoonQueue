@@ -1,0 +1,46 @@
+// src/components/TrailerButton/TrailerButton.module.scss
+.trailer {
+  position: absolute;
+  right: 9px;
+  bottom: 77px;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 5px;
+  width: 159px;
+  height: 25px;
+
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 120%;
+  text-align: center;
+
+  opacity: 0; /* Спочатку приховуємо елемент */
+  pointer-events: none; /* Вимикаємо події курсора */
+  transform: translateX(10%); /* Початкова позиція для анімації */
+  background: linear-gradient(
+    135deg,
+    rgba(180, 180, 180, 0.5) 50%,
+    transparent 50%
+  );
+  background-size: 200% 200%;
+  background-position: 100% 100%;
+  transition: opacity 0.3s ease, transform 0.3s ease,
+    background-position 0.5s ease-in-out; /* Додаємо анімацію */
+}
+
+.item:hover .trailer {
+  opacity: 1; /* Показуємо елемент при наведенні */
+  pointer-events: auto; /* Вмикаємо події курсора */
+  cursor: pointer; /* Змінюємо курсор на вказівник */
+  transform: translateX(0); /* Кінцева позиція для анімації */
+}
+
+.trailer:hover,
+.trailer:focus {
+  background-position: 0 0; /* Анімація появи заливки */
+}

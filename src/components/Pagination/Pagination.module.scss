@@ -1,0 +1,56 @@
+.PageActive {
+  color: var(--dark-red);
+  background: var(--dark-red);
+  font-weight: 700;
+
+}
+.dots{
+  font-size: 15px;
+}
+.pag{
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--second-family);
+  color: var(--dark-red);
+
+  font-weight: 600;
+  font-size: 13px;
+
+  &__arrow{
+    text-align: center;
+    line-height: 40px;
+    background: var(--white);
+    border: 2px solid var(--dark-red);
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    &:first-child{
+      margin-right: 5px;
+
+    }
+  }
+
+  &__button{
+    background: transparent;
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: row;
+    > li {
+      text-align: center;
+      line-height: 38px;
+      background: var(--white);
+      border: 2px solid var(--dark-red);
+      border-radius: 8px;
+
+      width: 40px;
+      height: 40px;
+
+      margin-right: 5px;
+    }
+  }
+}
+

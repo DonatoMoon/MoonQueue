@@ -1,0 +1,203 @@
+.modalFilm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.modalFilm__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modalCard {
+  background: white;
+  padding: 0 20px 20px 20px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 800px;
+  height: 565px;
+  // width: 100%;
+  &__close {
+    width: 100%;
+    text-align: right;
+    background: transparent;
+    font-size: 50px;
+  }
+}
+
+.modalFilm__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modalFilm__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modalFilm__btn-watched,
+.modalFilm__btn-queue {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.overlay {
+  // display: flex;
+  // justify-content: space-between;
+
+  // padding: 48px 30px 42px 24px;
+  // max-width: 882px;
+}
+
+.modalCardPrev {
+  // display: flex;
+  // justify-content: space-between;
+
+  position: absolute;
+  z-index: 10;
+  right: 75%;
+  top: calc(50% - 130px);
+  filter: blur(2px);
+  transform: scale(0.9);
+  cursor: pointer;
+
+  &:hover {
+    filter: blur(0px);
+    transform: translateX(20px);
+  }
+}
+
+.modalCardNext {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 42px 30px 104px 28px;
+
+  position: absolute;
+  z-index: 10;
+  right: 5%;
+  top: calc(50% - 165px);
+  transform: scale(0.9);
+  filter: blur(2px);
+  // position: fixed;
+  // top: 50%;
+  // transform: translateY(-50%);
+  cursor: pointer;
+
+  &:hover {
+    filter: blur(0px);
+    transform: translateX(-20px);
+  }
+}
+
+.modalCardPrev {
+  left: 20px;
+}
+
+.modalCardNext {
+  // right: 20px;
+}
+
+.modalCardPrev img,
+.modalCardNext img {
+  width: 202px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.modalCardImgThumb img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.modalCardData {
+  margin-top: 20px;
+}
+
+.modalCardDataHeading {
+  margin-bottom: 20px;
+}
+
+.modalCardList {
+  list-style: none;
+  padding: 0;
+}
+
+.modalCardListItem {
+  margin-bottom: 10px;
+}
+
+.modalCardListValue {
+  font-weight: bold;
+}
+
+.modalCardDescriptionHeading {
+  margin-top: 20px;
+}
+
+.modalCardDescription {
+  margin-top: 10px;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 50px;
+  right: 105px;
+  &__text {
+    font-family: var(--font-family);
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--black);
+  }
+  & > button {
+    background: transparent;
+    border-radius: 7px;
+    width: 150px;
+    height: 50px;
+    margin-right: 15px;
+    border: 2px solid var(--black);
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background: var(--dark-red);
+      border: none;
+      .buttons__text {
+        color: var(--white);
+      }
+    }
+  }
+}

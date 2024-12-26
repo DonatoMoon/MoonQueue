@@ -1,0 +1,37 @@
+.auth{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--white);
+
+  &__item{
+    width: 62px;
+    height: 22px;
+    border-radius: 7px;
+    border: 2px solid var(--dark-red);
+    margin-right: 20px;
+
+
+    &:hover{
+      background: var(--dark-red);
+    }
+    &:last-child{
+      width: 120px;
+      margin-right: 0;
+    }
+    > button{
+      color: var(--white);
+      background: transparent;
+    }
+
+  }
+  &__button{
+    color: var(--white);
+  }
+}

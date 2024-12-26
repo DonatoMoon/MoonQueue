@@ -1,0 +1,36 @@
+.carousel {
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.slide {
+  position: relative; /* Додано абсолютне позиціонування */
+  height: 200px;
+  width: 100%;
+  img {
+    position: absolute;
+    right: 8px;
+    border-radius: 8px;
+    width: 142px;
+    height: 200px;
+  }
+}
+
+.rate {
+  position: absolute; /* Зроблено абсолютним */
+  right: 8px; /* Вирівняно праворуч */
+  bottom: 0; /* Вирівняно внизу */
+  display: block;
+  width: 40px;
+  height: 20px;
+  background: var(--dark-red);
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--white);
+  text-align: center; /* Додано вирівнювання тексту по центру */
+  line-height: 20px;
+  border-radius: 8px;
+}

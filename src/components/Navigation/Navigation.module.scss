@@ -1,0 +1,43 @@
+.link {
+  padding: 30px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.link.active {
+  font-weight: 700;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 19%;
+  bottom: 25px;
+  background-color: #c00000;
+  height: 4px;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.4s ease-in-out;
+}
+
+.link:hover::after,
+.link:focus::after {
+  width: 61%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    margin-right: 20px;
+  }
+  &__button {
+  }
+}

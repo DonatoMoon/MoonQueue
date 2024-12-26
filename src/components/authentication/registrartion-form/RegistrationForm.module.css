@@ -1,0 +1,77 @@
+.input__box{ 
+	color: black;
+	margin: auto;
+	
+}
+.input__box__header{
+	position: relative;
+	height: 90px;
+	padding-top: 20px;
+	color: #fff;
+	background: linear-gradient(137deg, #ff9f47 0%, #fdb806 100%);
+	border-top-left-radius: 16px 16px;
+	border-top-right-radius: 16px 16px;
+}
+.input__box__header h1{
+	margin-bottom: 10px;
+	font-weight: 700;
+	font-size: 36px;
+}
+.input__box__header h2{
+	font-weight: 400;
+	font-size: 12px;
+	text-transform: uppercase;
+ }
+.input__box__label{
+	height: 85px;
+	padding: 20px 0;
+	font-weight: 400;
+	font-size: 25px;
+}
+.registration{
+	text-transform: uppercase;
+	background: #262626;
+	border-radius: 8px;
+	width: 380px;
+	height: 56px;
+	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+	text-align: center;
+	color: #fff;
+	font-weight: 700;
+	font-size: 12px;
+	padding: 20px;
+}
+.registration:hover{
+	background: #424242;
+}
+.alreadylogin{
+	font-weight: 400;
+	font-size: 12px;
+	color: #212121;
+	padding-bottom: 26px;
+}
+.alreadylogin__link{
+	text-transform: uppercase;
+	font-weight: 700;
+	text-decoration: underline;
+	color: #fdb806;
+}
+.alreadylogin__link:hover{
+	color: #ff9f47;
+}
+
+.cross {
+  position: absolute;
+  top: 30px; 
+  right: 20px; 
+  cursor: pointer;
+}
+
+.errorText {
+  position: absolute;
+  color: red;
+  font-size: 0.75rem;
+  top: 74%;
+	left: 50%; 
+  transform: translateX(-50%); 
+}

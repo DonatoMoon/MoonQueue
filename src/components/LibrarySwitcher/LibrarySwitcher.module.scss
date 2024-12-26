@@ -1,0 +1,39 @@
+.switch {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-family: "Roboto", sans-serif;
+
+  &__button {
+    background: transparent;
+    border-radius: 7px;
+    width: 150px;
+    height: 50px;
+    margin-right: 15px;
+    box-shadow: inset 0 0 0 2px var(--white);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background: var(--dark-red);
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    font-family: var(--font-family);
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+  }
+}
+
+.button__active {
+  background: var(--dark-red);
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 0 40px var(--dark-red);
+}

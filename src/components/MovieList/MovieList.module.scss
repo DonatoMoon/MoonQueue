@@ -1,0 +1,170 @@
+.trailer {
+  position: absolute;
+  right: 9px;
+  bottom: 77px;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 5px;
+  width: 159px;
+  height: 25px;
+
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 120%;
+  text-align: center;
+
+  opacity: 0; /* Спочатку приховуємо елемент */
+  pointer-events: none; /* Вимикаємо події курсора */
+  transform: translateX(10%); /* Початкова позиція для анімації */
+  background: linear-gradient(
+    135deg,
+    rgba(180, 180, 180, 0.5) 50%,
+    transparent 50%
+  );
+  background-size: 200% 200%;
+  background-position: 100% 100%;
+  transition: opacity 0.3s ease, transform 0.3s ease,
+    background-position 0.5s ease-in-out; /* Додаємо анімацію */
+}
+
+.item:hover .trailer {
+  opacity: 1; /* Показуємо елемент при наведенні */
+  pointer-events: auto; /* Вмикаємо події курсора */
+  cursor: pointer; /* Змінюємо курсор на вказівник */
+  transform: translateX(0); /* Кінцева позиція для анімації */
+}
+
+.trailer:hover,
+.trailer:focus {
+  background-position: 0 0; /* Анімація появи заливки */
+}
+
+// .trailer {
+//   position: absolute;
+//   right: 9px;
+//   bottom: 77px;
+//   // backdrop-filter: blur(4px);
+//   // background: rgba(244, 231, 231, 0.5);
+
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 8px;
+//   border-radius: 5px;
+//   width: 159px;
+//   height: 23px;
+//   color: var(--white);
+//   font-weight: 400;
+//   font-size: 20px;
+//   line-height: 120%;
+//   text-align: center;
+//   opacity: 0;
+//   transition: opacity 0.3s ease;
+// }
+
+// .trailer:hover,
+// .trailer:focus {
+//   opacity: 1;
+//   transform: translateX(0);
+//   // z-index: 2;
+// }
+
+// .item:hover .trailer {
+//   opacity: 1;
+//   transform: translateX(0);
+// }
+
+.list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 60px;
+}
+
+.item {
+  flex: 0 0 23.5%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 8px;
+
+  backdrop-filter: blur(10px);
+  background: var(--col);
+
+  img {
+    border-top-left-radius: 5px; /* Округлення верхніх кутів зображення на 5 пікселів */
+    border-top-right-radius: 5px; /* Округлення верхніх кутів зображення на 5 пікселів */
+    transition: transform 0.3s ease; /* Додавання плавного переходу для зображення */
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px 8px rgba(192, 0, 0, 0.48); /* Ефект тіні при наведенні */
+    transform: scale(1.05); /* Ефект збільшення при наведенні */
+  }
+}
+
+.rate {
+  position: absolute; /* Зроблено абсолютним */
+  right: 10px; /* Вирівняно праворуч */
+  bottom: 10px; /* Вирівняно внизу */
+  display: block;
+  width: 40px;
+  height: 20px;
+  background: var(--dark-red);
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--white);
+  text-align: center; /* Додано вирівнювання тексту по центру */
+  line-height: 20px;
+  border-radius: 10px;
+}
+
+.info {
+  height: 70px;
+  background: var(--white);
+  text-align: left;
+  padding: 5px;
+  line-height: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  &__title {
+    color: var(--black);
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    color: var(--dark-red);
+  }
+}
+
+.img {
+  width: 100%; /* Змушує зображення заповнювати доступний горизонтальний простір */
+}
+
+.poster-list__wrap {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .item {
+    flex: 0 0 46%; /* Два елемента в ряду для планшетів і мобільних */
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    flex: 0 0 100%; /* Один елемент в ряду для дуже малих екранів */
+  }
+}
