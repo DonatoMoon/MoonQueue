@@ -48,9 +48,9 @@ export default function AuthNav() {
         {user ? (
             <div className={css.auth__item}>
 
-            <button className={css.auth__button} onClick={handleLogout}>
-              Log out
-            </button>
+              <button className={css.auth__button} onClick={handleLogout}>
+                Log out
+              </button>
             </div>
         ) : (
             <>

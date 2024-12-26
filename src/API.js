@@ -7,7 +7,7 @@ const API_KEY = "30da0ae8ce19ff0019a87a2e60d710f1";
 const options = {
   headers: {
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMGRhMGFlOGNlMTlmZjAwMTlhODdhMmU2MGQ3MTBmMSIsInN1YiI6IjY1ZDhlNTBlNDJmMTlmMDE2MzE5ZDMyOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Yd-6bmHkQ9Q3U1Ips1Ok0-P7UF-PhPSzPL5CBgt03Xs",
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMGRhMGFlOGNlMTlmZjAwMTlhODdhMmU2MGQ3MTBmMSIsInN1YiI6IjY1ZDhlNTBlNDJmMTlmMDE2MzE5ZDMyOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Yd-6bmHkQ9Q3U1Ips1Ok0-P7UF-PhPSzPL5CBgt03Xs",
   },
 };
 
@@ -33,18 +33,18 @@ export const getUpcomingMovies = async () => {
 
 export const getSearchMovie = async (query, page) => {
   const { data } = await axios.get(
-    `/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}`
+      `/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}`
   );
   return data;
 };
 
 export const getSearchForm = async (
-  page = 1,
-  query = "",
-  genre = "",
-  year = "",
-  sort = "",
-  author = ""
+    page = 1,
+    query = "",
+    genre = "",
+    year = "",
+    sort = "",
+    author = ""
 ) => {
   try {
     let discoverUrl = `/discover/movie?api_key=${API_KEY}&language=uk-UA&page=${page}`;
@@ -53,8 +53,8 @@ export const getSearchForm = async (
     // Якщо задано автора, спочатку шукаємо автора
     if (author) {
       const authorResponse = await axios.get(
-        `/search/person?api_key=${API_KEY}&query=${author}&language=uk-UA&page=1`,
-        options
+          `/search/person?api_key=${API_KEY}&query=${author}&language=uk-UA&page=1`,
+          options
       );
 
       if (authorResponse.data.results.length === 0) {
@@ -64,8 +64,8 @@ export const getSearchForm = async (
 
       const authorId = authorResponse.data.results[0].id;
       const authorMoviesResponse = await axios.get(
-        `/person/${authorId}/movie_credits?api_key=${API_KEY}&language=uk-UA`,
-        options
+          `/person/${authorId}/movie_credits?api_key=${API_KEY}&language=uk-UA`,
+          options
       );
 
       if (authorMoviesResponse.data.cast.length === 0) {
@@ -78,23 +78,23 @@ export const getSearchForm = async (
       // Фільтруємо фільми за додатковими параметрами
       if (genre !== "start" && genre !== "") {
         authorMovies = authorMovies.filter((movie) =>
-          movie.genre_ids.includes(parseInt(genre))
+            movie.genre_ids.includes(parseInt(genre))
         );
       }
       if (year !== "" && year !== "start") {
         authorMovies = authorMovies.filter(
-          (movie) =>
-            new Date(movie.release_date).getFullYear() === parseInt(year)
+            (movie) =>
+                new Date(movie.release_date).getFullYear() === parseInt(year)
         );
       }
       if (sort !== "" && sort !== "start") {
         if (sort.includes(".desc")) {
           authorMovies.sort(
-            (a, b) => b[sort.split(".")[0]] - a[sort.split(".")[0]]
+              (a, b) => b[sort.split(".")[0]] - a[sort.split(".")[0]]
           );
         } else {
           authorMovies.sort(
-            (a, b) => a[sort.split(".")[0]] - b[sort.split(".")[0]]
+              (a, b) => a[sort.split(".")[0]] - b[sort.split(".")[0]]
           );
         }
       }
@@ -102,7 +102,7 @@ export const getSearchForm = async (
       // Фільтрація по назві фільму, якщо query не порожній
       if (query !== "") {
         authorMovies = authorMovies.filter((movie) =>
-          movie.title.toLowerCase().includes(query.toLowerCase())
+            movie.title.toLowerCase().includes(query.toLowerCase())
         );
       }
 
@@ -132,12 +132,12 @@ export const getSearchForm = async (
         year && `primary_release_year=${year}`,
         sort && `sort_by=${sort}`,
       ]
-        .filter(Boolean)
-        .join("&");
+          .filter(Boolean)
+          .join("&");
 
       const searchResponse = await axios.get(
-        `${searchUrl}&${queryString}`,
-        options
+          `${searchUrl}&${queryString}`,
+          options
       );
 
       if (searchResponse.data.results.length === 0) {
@@ -149,10 +149,10 @@ export const getSearchForm = async (
     }
 
     const discoverResponse = await axios.get(
-      `${discoverUrl}${genre ? `&with_genres=${genre}` : ""}${
-        year ? `&primary_release_year=${year}` : ""
-      }${sort ? `&sort_by=${sort}` : ""}`,
-      options
+        `${discoverUrl}${genre ? `&with_genres=${genre}` : ""}${
+            year ? `&primary_release_year=${year}` : ""
+        }${sort ? `&sort_by=${sort}` : ""}`,
+        options
     );
 
     if (discoverResponse.data.results.length === 0) {
@@ -170,8 +170,8 @@ export const getSearchForm = async (
 
 export const getPopularMovies = async (page) => {
   const popularResponse = await axios.get(
-    `/movie/popular?api_key=${API_KEY}&language=uk-UA&page=${page}`,
-    options
+      `/movie/popular?api_key=${API_KEY}&language=uk-UA&page=${page}`,
+      options
   );
 
   return popularResponse.data;
@@ -398,3 +398,17 @@ export const getTrailer = async (movieId) => {
 //   .catch((error) => {
 //     console.error("Error:", error);
 //   });
+export const getRecommendationsByGenres = async (genres) => {
+  try {
+    const genreQuery = genres.join(',');
+    const response = await axios.get(
+        `/discover/movie?api_key=${API_KEY}&language=uk-UA&with_genres=${genreQuery}&sort_by=popularity.desc`,
+        options
+    );
+    return response.data.results;
+  } catch (error) {
+    console.error("Error fetching recommendations:", error);
+    throw error;
+  }
+};
+
