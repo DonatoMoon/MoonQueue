@@ -14,6 +14,7 @@ export default function Header() {
                 <div className={css.header__item}>
                     {location.pathname === "/" && <FilterForm/>}
                     {location.pathname === "/library" && <LibrarySwitcher/>}
+                    {location.pathname === "/recommendation" && <FilterForm/>}
                 </div>
             </div>
         </header>

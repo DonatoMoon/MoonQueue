@@ -39,7 +39,7 @@
     font-size: 40px;
     font-family: "Times New Roman", Times, serif;
 
-    color: #c00000;
+    color: #6400de;
 
     left: 0;
     top: -2px;
@@ -71,7 +71,7 @@
     font-family: "Times New Roman", Times, serif;
 
     opacity: 0;
-    -webkit-text-fill-color: #c00000;
+    -webkit-text-fill-color: #6400de;
     left: 0;
     top: -2px;
 
@@ -90,7 +90,7 @@
     }
     &.progressCircle {
       path {
-        stroke: #c00000;
+        stroke: #6400de;
         stroke-width: 8;
         box-sizing: border-box;
         -webkit-transition: all 200ms linear;

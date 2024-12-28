@@ -39,13 +39,7 @@ export default function Footer() {
                   </a>
                 </div>
               </div>
-              <div className={css.footer__rights}>
-                © 2024 | All Rights Reserved | Developed with{" "}
-                <span className={css.footer__rights__hearts}>❤</span> by{" "}
-                <span>
-                  FUTUMI<span className={css.footer__rights__small}>team</span>
-                </span>
-              </div>
+
             </div>
 
             <div className={css.footer__col}>
@@ -58,7 +52,7 @@ export default function Footer() {
                   </div>
                   <div className={css.footer__contact__col}>
                     <p>123-456-7890</p>
-                    <p>support@futumi.com</p>
+                    <p>support@moon.com</p>
                   </div>
                 </div>
               </div>

@@ -7,7 +7,7 @@ export default function Logo() {
         <div className={cl.logo}>
             <NavLink to="/">
                 <img src={logo} alt="Cinemania logo"/>
-                <span className={cl.logo__title}> Cinemania</span>
+                <span className={cl.logo__title}> MoonQueue</span>
                 {/* <img src={logo} alt="Logo" /> */}
             </NavLink>
         </div>

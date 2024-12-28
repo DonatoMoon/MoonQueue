@@ -12,11 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
   --white: #fff;
-  --dark-red: #c00000;
+  --dark-red: #6400de;
   --gray: #8c8c8c;
   --black-red: #130000;
   --black: #000000;
-  --font-col: rgba(19, 0, 0, 0.5);
+  --font-col: rgba(19, 12, 70, 0.4);
   --footer: #130000;
 }
 
@@ -57,6 +57,7 @@ footer,
 header,
 aside {
   display: block;
+
 }
 html,
 body {
